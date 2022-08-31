@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TextInput, View, Platform, StatusBar } from "react-native";
 import React from "react";
-import { TextInputComponent, ButtonComponent, CheckBoxComponent } from "../components";
+import { TextInputComponent, ButtonComponent, CheckBoxComponent } from "../../components";
 
 const SignUpScreen = () => {
   return (

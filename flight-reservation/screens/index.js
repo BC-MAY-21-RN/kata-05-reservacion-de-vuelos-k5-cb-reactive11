@@ -1,3 +1,3 @@
-import SignUpScreen from './SignUpScreen.js'
+import SignUpScreen from './SignUpScreen'
 
 export {SignUpScreen}
