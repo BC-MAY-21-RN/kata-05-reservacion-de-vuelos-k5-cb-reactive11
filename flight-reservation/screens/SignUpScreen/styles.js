@@ -25,4 +25,11 @@ export const styles = StyleSheet.create({
       paddingTop:20,
       paddingBottom:10,
     },
+    linkColor: {
+      color:'blue',
+      textDecorationLine:'underline'
+    },
+    textColor:{
+    color:'grey'
+    }
   });

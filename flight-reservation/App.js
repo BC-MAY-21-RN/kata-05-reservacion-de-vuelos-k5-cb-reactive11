@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { StyleSheet, SafeAreaView, Platform, StatusBar } from 'react-native';
 import {SignUpScreen} from './screens';
 
