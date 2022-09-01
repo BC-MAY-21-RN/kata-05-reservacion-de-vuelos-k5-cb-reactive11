@@ -1,15 +1,9 @@
-/* eslint-disable react/prop-types */
 import { View  } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { styles } from "./styles";
 
-
-const CheckBoxComponent = ({text, status}) => {
-  // for later use
-  // const [checked, setChecked] = useState(false);
-  // const [color, setColor] = useState('gray')
-
+const CheckBoxComponent = ({text}) => {
   return (
     <View style={styles.container}>
       <BouncyCheckbox
@@ -23,4 +17,3 @@ const CheckBoxComponent = ({text, status}) => {
 };
 
 export default CheckBoxComponent;
-

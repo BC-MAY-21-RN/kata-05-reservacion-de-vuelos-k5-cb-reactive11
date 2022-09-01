@@ -1,6 +1,6 @@
-/* eslint-disable react/react-in-jsx-scope */
-import { StyleSheet, SafeAreaView, Platform, StatusBar } from 'react-native';
-import {SignUpScreen} from './screens';
+import { SafeAreaView } from "react-native";
+import { SignUpScreen } from "./screens";
+import { styles } from './assets/styles/globalStyles'
 
 export default function App() {
   return (
@@ -9,13 +9,4 @@ export default function App() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-});
+ßß

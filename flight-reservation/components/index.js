@@ -1,5 +1,5 @@
-import TextInputComponent from './TextInputComponent';
 import ButtonComponent from './ButtonComponent'
 import CheckBoxComponent from './CheckBoxComponent'
+import TextInputComponent from './TextInputComponent';
 
-export {TextInputComponent, ButtonComponent, CheckBoxComponent}
+export {ButtonComponent, CheckBoxComponent, TextInputComponent}
