@@ -1,11 +1,11 @@
 import { SafeAreaView } from "react-native";
-import { SignUpScreen } from "./screens";
+import FlightItem from "./components/FlightItemComponent/index";
 import { styles } from './assets/styles/globalStyles'
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <SignUpScreen />
+      <FlightItem />
     </SafeAreaView>
   );
 }
