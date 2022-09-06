@@ -5,7 +5,7 @@ import {
   TextInputComponent,
   TitleComponent,
 } from "../../components";
-import styles from "./styles"
+import styles from "./styles";
 
 const LoginScreen = () => {
   return (
@@ -27,12 +27,11 @@ const LoginScreen = () => {
         icon="google"
         textColor="#fff"
       />
-    <View style={styles.singUpAlternative}>
+      <View style={styles.singUpAlternative}>
         <Text style={styles.singUpAlternativeText}>Don't have an account?</Text>
         <Text style={styles.signUpLink}>Sign up</Text>
+      </View>
     </View>
-    </View>
-  
   );
 };
 
