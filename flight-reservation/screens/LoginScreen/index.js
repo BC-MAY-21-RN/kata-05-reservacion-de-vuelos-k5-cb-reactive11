@@ -15,14 +15,13 @@ const LoginScreen = () => {
       <TextInputComponent
         title="Password *"
         icon="eye"
-        help="Use 8 or more characters with a mix of letter, numbers, and symbols"
       />
-      <ButtonComponent title="Sign Up" bgColor="gray" />
+      <ButtonComponent title="Log in" bgColor="gray" />
       <View style={styles.orSection}>
         <Text>or</Text>
       </View>
       <ButtonComponent
-        title="Sign Up with Google"
+        title="Log in with Google"
         bgColor="gray"
         icon="google"
         textColor="#fff"
