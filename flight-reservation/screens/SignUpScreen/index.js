@@ -1,17 +1,17 @@
 import {
   ButtonComponent,
   CheckBoxComponent,
-  TextInputComponent
+  TextInputComponent,
+  TitleComponent,
 } from "../../components";
 import React from "react";
 import { styles } from "./styles";
 import { Text, View } from "react-native";
 
 const SignUpScreen = () => {
-  
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Sign Up</Text>
+      <TitleComponent title="Sign up" />
       <TextInputComponent title="First name" />
       <TextInputComponent title="Email *" />
       <TextInputComponent
