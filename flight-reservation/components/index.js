@@ -1,6 +1,11 @@
-import ButtonComponent from './ButtonComponent'
-import CheckBoxComponent from './CheckBoxComponent'
-import TextInputComponent from './TextInputComponent';
-import TitleComponent from './TitleComponent';
+import ButtonComponent from "./ButtonComponent";
+import CheckBoxComponent from "./CheckBoxComponent";
+import TextInputComponent from "./TextInputComponent";
+import TitleComponent from "./TitleComponent";
 
-export {ButtonComponent, CheckBoxComponent, TextInputComponent,TitleComponent}
+export {
+  ButtonComponent,
+  CheckBoxComponent,
+  TextInputComponent,
+  TitleComponent,
+};
