@@ -6,16 +6,14 @@ import DATA from "../../assets/data/DATA.json";
 
 const FlightList = () => {
   const renderItem = ({ item }) => (
-    <View style={styles.itemContainer}>
-      <FlightItem
-        originLong={item.originLong}
-        originShort={item.originShort}
-        destLong={item.destLong}
-        destShort={item.destShort}
-        date={item.date}
-        passengers={item.passengers}
-      />
-    </View>
+    <FlightItem
+      originLong={item.originLong}
+      originShort={item.originShort}
+      destLong={item.destLong}
+      destShort={item.destShort}
+      date={item.date}
+      passengers={item.passengers}
+    />
   );
   return (
     <View style={styles.listContainer}>

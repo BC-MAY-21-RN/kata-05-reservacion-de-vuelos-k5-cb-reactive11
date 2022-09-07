@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     borderColor: "#000",
     borderBottomWidth: 1,
     paddingBottom: 20,
+    marginVertical: 5,
   },
   destination: {
     flexDirection: "row",
