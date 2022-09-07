@@ -1,91 +1,8 @@
 import { FlatList, View } from "react-native";
-import { FlightItem } from "../../components";
+import FlightItem from "../FlightItemComponent";
 import styles from "./styles";
 import React from "react";
-
-const data = [
-  {
-    id: 0,
-    originLong: "Los angeles",
-    originShort: "LAC",
-    destLong: "Caracas",
-    destShort: "CAR",
-    date: "September 23, 2022",
-    passengers: "24",
-  },
-  {
-    id: 1,
-    originLong: "Los angeles",
-    originShort: "LAC",
-    destLong: "Caracas",
-    destShort: "CAR",
-    date: "September 23, 2022",
-    passengers: "24",
-  },
-  {
-    id: 2,
-    originLong: "Los angeles",
-    originShort: "LAC",
-    destLong: "Caracas",
-    destShort: "CAR",
-    date: "September 23, 2022",
-    passengers: "24",
-  },
-  {
-    id: 3,
-    originLong: "Los angeles",
-    originShort: "LAC",
-    destLong: "Caracas",
-    destShort: "CAR",
-    date: "September 23, 2022",
-    passengers: "24",
-  },
-  {
-    id: 4,
-    originLong: "Los angeles",
-    originShort: "LAC",
-    destLong: "Caracas",
-    destShort: "CAR",
-    date: "September 23, 2022",
-    passengers: "24",
-  },
-  {
-    id: 5,
-    originLong: "Los angeles",
-    originShort: "LAC",
-    destLong: "Caracas",
-    destShort: "CAR",
-    date: "September 23, 2022",
-    passengers: "24",
-  },
-  {
-    id: 6,
-    originLong: "Los angeles",
-    originShort: "LAC",
-    destLong: "Caracas",
-    destShort: "CAR",
-    date: "September 23, 2022",
-    passengers: "24",
-  },
-  {
-    id: 7,
-    originLong: "Los angeles",
-    originShort: "LAC",
-    destLong: "Caracas",
-    destShort: "CAR",
-    date: "September 23, 2022",
-    passengers: "24",
-  },
-  {
-    id: 8,
-    originLong: "Los angeles",
-    originShort: "LAC",
-    destLong: "Caracas",
-    destShort: "CAR",
-    date: "September 23, 2022",
-    passengers: "24",
-  },
-];
+import DATA from "../../assets/data/DATA.json";
 
 const FlightList = () => {
   const renderItem = ({ item }) => (
@@ -103,9 +20,10 @@ const FlightList = () => {
   return (
     <View style={styles.listContainer}>
       <FlatList
-        data={data}
+        data={DATA}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
