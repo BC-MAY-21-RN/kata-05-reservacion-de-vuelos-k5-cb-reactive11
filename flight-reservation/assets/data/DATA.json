@@ -1,0 +1,83 @@
+[
+  {
+    "id": 0,
+    "originLong": "Los angeles",
+    "originShort": "LAC",
+    "destLong": "Caracas",
+    "destShort": "CAR",
+    "date": "September 23, 2022",
+    "passengers": "24"
+  },
+  {
+    "id": 1,
+    "originLong": "Los angeles",
+    "originShort": "LAC",
+    "destLong": "Caracas",
+    "destShort": "CAR",
+    "date": "September 23, 2022",
+    "passengers": "24"
+  },
+  {
+    "id": 2,
+    "originLong": "Los angeles",
+    "originShort": "LAC",
+    "destLong": "Caracas",
+    "destShort": "CAR",
+    "date": "September 23, 2022",
+    "passengers": "24"
+  },
+  {
+    "id": 3,
+    "originLong": "Los angeles",
+    "originShort": "LAC",
+    "destLong": "Caracas",
+    "destShort": "CAR",
+    "date": "September 23, 2022",
+    "passengers": "24"
+  },
+  {
+    "id": 4,
+    "originLong": "Los angeles",
+    "originShort": "LAC",
+    "destLong": "Caracas",
+    "destShort": "CAR",
+    "date": "September 23, 2022",
+    "passengers": "24"
+  },
+  {
+    "id": 5,
+    "originLong": "Los angeles",
+    "originShort": "LAC",
+    "destLong": "Caracas",
+    "destShort": "CAR",
+    "date": "September 23, 2022",
+    "passengers": "24"
+  },
+  {
+    "id": 6,
+    "originLong": "Los angeles",
+    "originShort": "LAC",
+    "destLong": "Caracas",
+    "destShort": "CAR",
+    "date": "September 23, 2022",
+    "passengers": "24"
+  },
+  {
+    "id": 7,
+    "originLong": "Los angeles",
+    "originShort": "LAC",
+    "destLong": "Caracas",
+    "destShort": "CAR",
+    "date": "September 23, 2022",
+    "passengers": "24"
+  },
+  {
+    "id": 8,
+    "originLong": "Los angeles",
+    "originShort": "LAC",
+    "destLong": "Caracas",
+    "destShort": "CAR",
+    "date": "September 23, 2022",
+    "passengers": "24"
+  }
+]
