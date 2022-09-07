@@ -3,6 +3,7 @@ import styles from "./style";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 
+
 const FlightItem = ({
   date,
   destLong,
@@ -15,7 +16,7 @@ const FlightItem = ({
     <View style={styles.mainContainer}>
       <View style={styles.destination}>
         <View>
-          <Text style={styles.destinationText}>{originShort}</Text>
+          <Text style={[styles.destinationText, { fontFamily: 'avenir-next' }]}>{originShort}</Text>
           <Text style={styles.subText}>{originLong}</Text>
         </View>
         <Ionicons name="airplane" size={24} color="#6170F7" />

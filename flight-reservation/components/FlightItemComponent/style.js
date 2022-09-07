@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
   destinationText: {
     fontSize: 22,
-    fontWeight: "bold",
+    fontWeight: "900",
   },
   dateText: {
     fontSize: 15,
