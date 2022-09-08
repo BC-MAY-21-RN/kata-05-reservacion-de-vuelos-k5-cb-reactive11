@@ -23,9 +23,6 @@ export const styles = StyleSheet.create({
     paddingLeft: 12,
     fontSize: 18,
   },
-  inputContainer: {
-    //paddingLeft: 5,
-  },
   hint: {
     color: "grey",
     textAlign: "justify",

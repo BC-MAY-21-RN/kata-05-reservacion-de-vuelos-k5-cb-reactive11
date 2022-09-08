@@ -3,7 +3,13 @@ import React, { useState } from "react";
 import { styles } from "./styles";
 import { Text, TextInput, View } from "react-native";
 
-const TextInputComponent = ({ title, enablePassword, help, keyboardType }) => {
+const TextInputComponent = ({
+  title,
+  enablePassword,
+  help,
+  keyboardType,
+  icon,
+}) => {
   const [password, setPassword] = useState(enablePassword);
   const [iconPwd, setIcon] = useState("eye-outline");
 
@@ -17,7 +23,7 @@ const TextInputComponent = ({ title, enablePassword, help, keyboardType }) => {
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.titleWarning}>*{title}</Text>
       </View>
-      <View style={styles.inputContainer}>
+      <View>
         <TextInput
           style={styles.input}
           secureTextEntry={password}
@@ -31,6 +37,9 @@ const TextInputComponent = ({ title, enablePassword, help, keyboardType }) => {
             style={styles.icon}
             onPress={showPassword}
           />
+        )}
+        {icon && (
+          <Ionicons name={icon} size={24} color="black" style={styles.icon} />
         )}
       </View>
       <Text style={styles.hint}>{help}</Text>
