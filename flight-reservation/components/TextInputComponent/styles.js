@@ -20,6 +20,8 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "grey",
     height: 45,
+    paddingLeft: 12,
+    fontSize: 18,
   },
   hint: {
     color: "grey",

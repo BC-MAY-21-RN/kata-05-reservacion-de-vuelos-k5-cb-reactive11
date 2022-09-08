@@ -12,10 +12,10 @@ const SignUpScreen = () => {
   return (
     <View style={styles.container}>
       <TitleComponent title="Sign up" />
-      <TextInputComponent title="First name" />
-      <TextInputComponent title="Email *" />
+      <TextInputComponent title="First name" keyboardType={"default"} />
+      <TextInputComponent title="Email *" keyboardType={"email-address"} />
       <TextInputComponent
-        icon="eyeo"
+        enablePassword={true}
         title="Password *"
         help={
           "Use 8 or more characters with a mix of letters, numbers, and symbols."
