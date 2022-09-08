@@ -15,7 +15,8 @@ const SignUpScreen = () => {
       <TextInputComponent title="First name" />
       <TextInputComponent title="Email *" />
       <TextInputComponent
-        icon="eyeo"
+        enablePassword={true}
+        icon="eye-off-outline"
         title="Password *"
         help={
           "Use 8 or more characters with a mix of letters, numbers, and symbols."
