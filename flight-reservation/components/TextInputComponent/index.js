@@ -1,15 +1,15 @@
 import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import { styles } from "./styles";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Text, TextInput, View } from "react-native";
 
-const TextInputComponent = ({ title, enablePassword, help, icon }) => {
+const TextInputComponent = ({ title, enablePassword, help, keyboardType }) => {
   const [password, setPassword] = useState(enablePassword);
-  const [iconPwd, setIcon] = useState(icon);
+  const [iconPwd, setIcon] = useState("eye-outline");
 
   const showPassword = () => {
     setPassword(!password);
-    setIcon("eye-outline");
+    password ? setIcon("eye-off-outline") : setIcon("eye-outline");
   };
   return (
     <View style={styles.container}>
@@ -18,8 +18,12 @@ const TextInputComponent = ({ title, enablePassword, help, icon }) => {
         <Text style={styles.titleWarning}>*{title}</Text>
       </View>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} secureTextEntry={password} />
-        {icon && (
+        <TextInput
+          style={styles.input}
+          secureTextEntry={password}
+          keyboardType={keyboardType}
+        />
+        {enablePassword && (
           <Ionicons
             name={iconPwd}
             size={24}
