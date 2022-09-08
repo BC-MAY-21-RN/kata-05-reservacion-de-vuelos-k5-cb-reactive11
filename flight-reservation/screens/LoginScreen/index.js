@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import React from "react";
 import {
   ButtonComponent,
@@ -11,10 +11,10 @@ const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <TitleComponent title="Log in" />
-      <TextInputComponent title="Email *" />
+      <TextInputComponent title="Email *" keyboardType={"email-address"}/>
       <TextInputComponent
         title="Password *"
-        icon="eye"
+        enablePassword={true}
       />
       <ButtonComponent title="Log in" bgColor="gray" />
       <View style={styles.orSection}>

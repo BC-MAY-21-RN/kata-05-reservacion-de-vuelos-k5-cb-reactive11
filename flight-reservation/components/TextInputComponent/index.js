@@ -33,13 +33,13 @@ const TextInputComponent = ({
           <Ionicons
             name={iconPwd}
             size={24}
-            color="black"
+            color="grey"
             style={styles.icon}
             onPress={showPassword}
           />
         )}
         {icon && (
-          <Ionicons name={icon} size={24} color="black" style={styles.icon} />
+          <Ionicons name={icon} size={24} color="grey" style={styles.icon} />
         )}
       </View>
       <Text style={styles.hint}>{help}</Text>
