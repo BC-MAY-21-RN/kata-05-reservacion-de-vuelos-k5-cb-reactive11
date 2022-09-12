@@ -5,16 +5,7 @@ import React from "react";
 import DATA from "../../assets/data/DATA.json";
 
 const FlightList = () => {
-  const renderItem = ({ item }) => (
-    <FlightItem
-      originLong={item.originLong}
-      originShort={item.originShort}
-      destLong={item.destLong}
-      destShort={item.destShort}
-      date={item.date}
-      passengers={item.passengers}
-    />
-  );
+  const renderItem = ({ item }) => <FlightItem {...item} />;
   return (
     <View style={styles.listContainer}>
       <FlatList
@@ -26,5 +17,4 @@ const FlightList = () => {
     </View>
   );
 };
-
 export default FlightList;
