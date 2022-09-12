@@ -1,0 +1,22 @@
+[
+    {
+        "key" : 0,
+        "value": "Colombia",
+        "countryShort": "COL"
+    },
+    {
+        "key" : 1,
+        "value": "Afganistan",
+        "countryShort": "AFG"
+    },
+    {
+        "key" : 2,
+        "value": "Mexico",
+        "countryShort": "MEX"
+    },
+    {
+        "key" : 3,
+        "value": "Bolivia",
+        "countryShort": "BOL"
+    }
+]
