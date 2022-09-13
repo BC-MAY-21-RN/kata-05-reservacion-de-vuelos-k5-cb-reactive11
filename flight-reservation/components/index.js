@@ -4,6 +4,7 @@ import FlightItem from "./FlightItemComponent";
 import FlightList from "./FlightListComponent";
 import TextInputComponent from "./TextInputComponent";
 import TitleComponent from "./TitleComponent";
+import SelectLocationComponent from "./SelectLocationComponent";
 
 export {
   ButtonComponent,
@@ -12,4 +13,5 @@ export {
   FlightList,
   TextInputComponent,
   TitleComponent,
+  SelectLocationComponent
 };
