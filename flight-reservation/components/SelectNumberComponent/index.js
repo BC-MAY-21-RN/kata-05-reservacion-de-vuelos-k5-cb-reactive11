@@ -5,7 +5,6 @@ import data from "../../assets/data/passengers.json";
 import styles from './styles';
 import { AntDesign } from '@expo/vector-icons';
 
-
 const SelectNumberComponent = () => {
 
     const [selectedItem, setSelectedItem] = useState(1);
@@ -24,7 +23,6 @@ const SelectNumberComponent = () => {
             />
             <AntDesign name="caretleft" size={15} color="#5c6ef8" />
             <View style={styles.whiteBottomLine}></View>
-
         </View>
     )
 }
