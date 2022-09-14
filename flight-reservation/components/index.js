@@ -6,6 +6,7 @@ import FlightList from "./FlightListComponent";
 import TextInputComponent from "./TextInputComponent";
 import TitleComponent from "./TitleComponent";
 import SelectLocationComponent from "./SelectLocationComponent";
+import SelectNumberComponent from "./SelectNumberComponent"
 
 export {
   ButtonComponent,
@@ -15,5 +16,6 @@ export {
   FlightList,
   TextInputComponent,
   TitleComponent,
-  SelectLocationComponent
+  SelectLocationComponent,
+  SelectNumberComponent
 };

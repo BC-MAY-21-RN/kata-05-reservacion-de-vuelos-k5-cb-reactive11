@@ -15,7 +15,8 @@
     "react-native": "0.69.5",
     "react-native-bouncy-checkbox": "^3.0.4",
     "react-native-dropdown-select-list": "^1.0.21",
-    "react-native-modern-datepicker": "^1.0.0-beta.91"
+    "react-native-modern-datepicker": "^1.0.0-beta.91",
+    "react-native-spin-picker": "^0.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
