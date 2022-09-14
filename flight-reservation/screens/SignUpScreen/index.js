@@ -6,40 +6,42 @@ import {
 } from "../../components";
 import React from "react";
 import { styles } from "./styles";
-import { Text, View } from "react-native";
+import { Text, View, SafeAreaView } from "react-native";
 
 const SignUpScreen = () => {
   return (
-    <View style={styles.container}>
-      <TitleComponent title="Sign up" />
-      <TextInputComponent title="First name" keyboardType={"default"} />
-      <TextInputComponent title="Email *" keyboardType={"email-address"} />
-      <TextInputComponent
-        enablePassword={true}
-        title="Password *"
-        help={
-          "Use 8 or more characters with a mix of letters, numbers, and symbols."
-        }
-      />
+    <SafeAreaView style={styles.globalContainer}>
+      <View style={styles.container}>
+        <TitleComponent title="Sign up" />
+        <TextInputComponent title="First name" keyboardType={"default"} />
+        <TextInputComponent title="Email *" keyboardType={"email-address"} />
+        <TextInputComponent
+          enablePassword={true}
+          title="Password *"
+          help={
+            "Use 8 or more characters with a mix of letters, numbers, and symbols."
+          }
+        />
 
-      <CheckBoxComponent text="I agree to the Terms and Privacy Policy" />
-      <CheckBoxComponent text="Subscribe for select product updates." />
+        <CheckBoxComponent text="I agree to the Terms and Privacy Policy" />
+        <CheckBoxComponent text="Subscribe for select product updates." />
 
-      <ButtonComponent title="Sign Up" textColor="#fff" bgColor="gray" />
-      <View style={styles.orSection}>
-        <Text>or</Text>
+        <ButtonComponent title="Sign Up" textColor="#fff" bgColor="gray" />
+        <View style={styles.orSection}>
+          <Text>or</Text>
+        </View>
+        <ButtonComponent
+          title="Sign Up with Google"
+          textColor="#fff"
+          bgColor="gray"
+          icon="google"
+        />
+        <View style={styles.loginSection}>
+          <Text style={styles.textColor}>Already have an account?</Text>
+          <Text style={styles.linkColor}>Log In</Text>
+        </View>
       </View>
-      <ButtonComponent
-        title="Sign Up with Google"
-        textColor="#fff"
-        bgColor="gray"
-        icon="google"
-      />
-      <View style={styles.loginSection}>
-        <Text style={styles.textColor}>Already have an account?</Text>
-        <Text style={styles.linkColor}>Log In</Text>
-      </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
