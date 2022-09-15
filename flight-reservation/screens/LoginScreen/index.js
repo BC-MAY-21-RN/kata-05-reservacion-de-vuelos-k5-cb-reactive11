@@ -1,36 +1,63 @@
-import { Text, View } from "react-native";
-import React from "react";
-import {
-  ButtonComponent,
-  TextInputComponent,
-  TitleComponent,
-} from "../../components";
+import { Text, View, SafeAreaView } from "react-native";
+import React, { useState } from "react";
+import { ButtonComponent, TextInputComponent } from "../../components";
 import styles from "./styles";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
+  const [input, setInput] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (value, name) => {
+    setInput((state) => ({ ...state, [name]: value }));
+  };
+
   return (
-    <View style={styles.container}>
-      <TitleComponent title="Log in" />
-      <TextInputComponent title="Email *" keyboardType={"email-address"}/>
-      <TextInputComponent
-        title="Password *"
-        enablePassword={true}
-      />
-      <ButtonComponent title="Log in" bgColor="gray" />
-      <View style={styles.orSection}>
-        <Text>or</Text>
+    <SafeAreaView style={styles.globalContainer}>
+      <View style={styles.container}>
+        <TextInputComponent
+          title="Email *"
+          keyboardType={"email-address"}
+          onChangeText={(value) => handleChange(value, "email")}
+        />
+        <TextInputComponent
+          title="Password *"
+          enablePassword={true}
+          onChangeText={(value) => handleChange(value, "password")}
+        />
+        <ButtonComponent
+          title="Log in"
+          bgColor="gray"
+          onPress={() => {
+            navigation.navigate("MyFlightsScreen", {
+              credentials: input,
+            });
+          }}
+        />
+        <View style={styles.orSection}>
+          <Text>or</Text>
+        </View>
+        <ButtonComponent
+          title="Log in with Google"
+          bgColor="gray"
+          icon="google"
+          textColor="#fff"
+          onPress={() => navigation.navigate("MyFlightsScreen")}
+        />
+        <View style={styles.singUpAlternative}>
+          <Text style={styles.singUpAlternativeText}>
+            Don't have an account?
+          </Text>
+          <Text
+            style={styles.signUpLink}
+            onPress={() => navigation.navigate("SignUpScreen")}
+          >
+            Sign up
+          </Text>
+        </View>
       </View>
-      <ButtonComponent
-        title="Log in with Google"
-        bgColor="gray"
-        icon="google"
-        textColor="#fff"
-      />
-      <View style={styles.singUpAlternative}>
-        <Text style={styles.singUpAlternativeText}>Don't have an account?</Text>
-        <Text style={styles.signUpLink}>Sign up</Text>
-      </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

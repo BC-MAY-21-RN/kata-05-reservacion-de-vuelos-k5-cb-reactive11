@@ -1,6 +1,12 @@
 import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
+    globalContainer: {
+        flex: 1,
+        backgroundColor: "#fff",
+        alignItems: "center",
+        justifyContent: "center",
+      },
     icon: {
         position: 'absolute',
         bottom: 10
@@ -8,7 +14,7 @@ const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
         width: '95%',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     title: {
         width: '90%',
