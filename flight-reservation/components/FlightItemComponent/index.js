@@ -25,8 +25,10 @@ const FlightItem = ({
         </View>
       </View>
       <View style={styles.date}>
-        <Text style={styles.dateText}>{date}</Text>
-        <Text style={styles.dateText}>{passengers} Passengers</Text>
+        <Text style={styles.dateText}>{date}</Text> 
+        {passengers && (
+          <Text style={styles.dateText}>{passengers} Passengers</Text>
+        )}
       </View>
     </View>
   );
