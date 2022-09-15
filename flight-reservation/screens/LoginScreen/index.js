@@ -19,7 +19,6 @@ const LoginScreen = ({ navigation }) => {
         <TextInputComponent
           title="Email *"
           keyboardType={"email-address"}
-          //value={input.email}
           onChangeText={(value) => handleChange(value, "email")}
         />
         <TextInputComponent
@@ -31,7 +30,9 @@ const LoginScreen = ({ navigation }) => {
           title="Log in"
           bgColor="gray"
           onPress={() => {
-            navigation.navigate("MyFlightsScreen");
+            navigation.navigate("MyFlightsScreen", {
+              credentials: input,
+            });
           }}
         />
         <View style={styles.orSection}>
