@@ -6,12 +6,12 @@ export const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   container: {
     flex: 1,
     width: "90%",
     marginHorizontal: "auto",
+    paddingTop: 10,
   },
   title: {
     color: "#6270de",

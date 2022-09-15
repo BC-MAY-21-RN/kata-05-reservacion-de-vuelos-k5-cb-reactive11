@@ -2,17 +2,15 @@ import {
   ButtonComponent,
   CheckBoxComponent,
   TextInputComponent,
-  TitleComponent,
 } from "../../components";
 import React from "react";
 import { styles } from "./styles";
 import { Text, View, SafeAreaView } from "react-native";
 
-const SignUpScreen = () => {
+const SignUpScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.globalContainer}>
       <View style={styles.container}>
-        <TitleComponent title="Sign up" />
         <TextInputComponent title="First name" keyboardType={"default"} />
         <TextInputComponent title="Email *" keyboardType={"email-address"} />
         <TextInputComponent
@@ -26,7 +24,12 @@ const SignUpScreen = () => {
         <CheckBoxComponent text="I agree to the Terms and Privacy Policy" />
         <CheckBoxComponent text="Subscribe for select product updates." />
 
-        <ButtonComponent title="Sign Up" textColor="#fff" bgColor="gray" />
+        <ButtonComponent
+          title="Sign Up"
+          textColor="#fff"
+          bgColor="gray"
+          onPress={() => navigation.navigate("MyFlightsScreen")}
+        />
         <View style={styles.orSection}>
           <Text>or</Text>
         </View>
@@ -35,10 +38,16 @@ const SignUpScreen = () => {
           textColor="#fff"
           bgColor="gray"
           icon="google"
+          onPress={() => navigation.navigate("MyFlightsScreen")}
         />
         <View style={styles.loginSection}>
           <Text style={styles.textColor}>Already have an account?</Text>
-          <Text style={styles.linkColor}>Log In</Text>
+          <Text
+            style={styles.linkColor}
+            onPress={() => navigation.navigate("LoginScreen")}
+          >
+            Log In
+          </Text>
         </View>
       </View>
     </SafeAreaView>

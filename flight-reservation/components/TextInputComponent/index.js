@@ -9,6 +9,8 @@ const TextInputComponent = ({
   help,
   keyboardType,
   icon,
+  value,
+  onChangeText,
 }) => {
   const [password, setPassword] = useState(enablePassword);
   const [iconPwd, setIcon] = useState("eye-outline");
@@ -28,6 +30,8 @@ const TextInputComponent = ({
           style={styles.input}
           secureTextEntry={password}
           keyboardType={keyboardType}
+          value={value}
+          onChangeText={onChangeText}
         />
         {enablePassword && (
           <Ionicons
