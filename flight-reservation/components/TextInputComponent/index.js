@@ -11,6 +11,7 @@ const TextInputComponent = ({
   icon,
   value,
   onChangeText,
+  isFilled,
 }) => {
   const [password, setPassword] = useState(enablePassword);
   const [iconPwd, setIcon] = useState("eye-outline");
@@ -27,7 +28,13 @@ const TextInputComponent = ({
       </View>
       <View>
         <TextInput
-          style={styles.input}
+          style={[
+            styles.input,
+            {
+              borderColor: isFilled ? "#6270de" : "grey",
+              borderWidth: isFilled ? 1.6 : 1,
+            },
+          ]}
           secureTextEntry={password}
           keyboardType={keyboardType}
           value={value}
@@ -37,7 +44,7 @@ const TextInputComponent = ({
           <Ionicons
             name={iconPwd}
             size={24}
-            color="grey"
+            color={isFilled ? "#6270de" : "grey"}
             style={styles.icon}
             onPress={showPassword}
           />

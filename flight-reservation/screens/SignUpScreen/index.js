@@ -8,6 +8,10 @@ import { styles } from "./styles";
 import { Text, View, SafeAreaView } from "react-native";
 
 const SignUpScreen = ({ navigation }) => {
+  const [FisrtNameFilled, setFirtstNameFilled] = useState(false);
+  const [EmailFilled, setEmailFilled] = useState(false);
+  const [passwordFilled, setPasswordFilled] = useState(false);
+
   const [input, setInput] = useState({
     firstName: "",
     email: "",
@@ -16,20 +20,28 @@ const SignUpScreen = ({ navigation }) => {
 
   const handleChange = (value, name) => {
     setInput((state) => ({ ...state, [name]: value }));
+    if (name == "firstName")
+      !value ? setFirtstNameFilled(false) : setFirtstNameFilled(true);
+    if (name == "email") 
+      !value ? setEmailFilled(false) : setEmailFilled(true);
+    if (name == "password")
+      !value ? setPasswordFilled(false) : setPasswordFilled(true);
   };
 
   return (
     <SafeAreaView style={styles.globalContainer}>
-      <View style={styles.container}>
+      <View style={[styles.container]}>
         <TextInputComponent
           title="First name"
           keyboardType={"default"}
           onChangeText={(value) => handleChange(value, "firstName")}
+          isFilled={FisrtNameFilled}
         />
         <TextInputComponent
           title="Email *"
           keyboardType={"email-address"}
           onChangeText={(value) => handleChange(value, "email")}
+          isFilled={EmailFilled}
         />
         <TextInputComponent
           enablePassword={true}
@@ -38,6 +50,7 @@ const SignUpScreen = ({ navigation }) => {
             "Use 8 or more characters with a mix of letters, numbers, and symbols."
           }
           onChangeText={(value) => handleChange(value, "password")}
+          isFilled={passwordFilled}
         />
 
         <CheckBoxComponent text="I agree to the Terms and Privacy Policy" />
