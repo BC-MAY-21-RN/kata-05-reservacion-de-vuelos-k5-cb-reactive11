@@ -6,6 +6,8 @@ import {
 import React, { useState } from "react";
 import { styles } from "./styles";
 import { Text, View, SafeAreaView } from "react-native";
+import { auth } from "../../assets/firebase-auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const SignUpScreen = ({ navigation }) => {
   const [input, setInput] = useState({
@@ -16,6 +18,16 @@ const SignUpScreen = ({ navigation }) => {
 
   const handleChange = (value, name) => {
     setInput((state) => ({ ...state, [name]: value }));
+  };
+
+  const handleSingUp = () => {
+    createUserWithEmailAndPassword(auth, input.email, input.password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user.email);
+        navigation.navigate("MyFlightsScreen", user);
+      })
+      .catch((error) => alert(error.message));
   };
 
   return (
@@ -47,9 +59,7 @@ const SignUpScreen = ({ navigation }) => {
           title="Sign Up"
           textColor="#fff"
           bgColor="gray"
-          onPress={() =>
-            navigation.navigate("MyFlightsScreen", { credentials: input })
-          }
+          onPress={handleSingUp}
         />
         <View style={styles.orSection}>
           <Text>or</Text>

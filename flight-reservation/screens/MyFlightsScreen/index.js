@@ -5,7 +5,9 @@ import React from "react";
 import styles from "./styles";
 
 const MyFlightsScreen = ({ route, navigation }) => {
-  const credentials = route.params;
+  const user = route.params;
+
+  console.log(user.email);
 
   return (
     <SafeAreaView style={styles.globalContainer}>
