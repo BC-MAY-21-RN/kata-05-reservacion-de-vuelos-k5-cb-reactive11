@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-export const styles = StyleSheet.create({
+export const styles = brderColor => StyleSheet.create({
   container: {
     marginBottom: 10,
   },
@@ -17,11 +17,11 @@ export const styles = StyleSheet.create({
     fontWeight: "300",
   },
   input: {
-    borderWidth: 1,
-    borderColor: "grey",
     height: 45,
     paddingLeft: 12,
     fontSize: 18,
+    borderWidth: 1,
+    borderColor: brderColor,
   },
   hint: {
     color: "grey",
