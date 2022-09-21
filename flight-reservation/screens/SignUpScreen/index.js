@@ -11,6 +11,7 @@ const SignUpScreen = ({ navigation }) => {
   const [FisrtNameFilled, setFirtstNameFilled] = useState(false);
   const [EmailFilled, setEmailFilled] = useState(false);
   const [passwordFilled, setPasswordFilled] = useState(false);
+  //const [borderColor, setBorderColor] = useState(false);
 
   const [input, setInput] = useState({
     firstName: "",
@@ -18,14 +19,10 @@ const SignUpScreen = ({ navigation }) => {
     password: "",
   });
 
-  const handleChange = (value, name) => {
+  const handleChange = (value, name, setBorder, borderState) => {
     setInput((state) => ({ ...state, [name]: value }));
-    if (name == "firstName")
-      !value ? setFirtstNameFilled(false) : setFirtstNameFilled(true);
-    if (name == "email") 
-      !value ? setEmailFilled(false) : setEmailFilled(true);
-    if (name == "password")
-      !value ? setPasswordFilled(false) : setPasswordFilled(true);
+    setBorder(borderState);
+    if (value == "") setBorder(false);
   };
 
   return (
@@ -34,13 +31,17 @@ const SignUpScreen = ({ navigation }) => {
         <TextInputComponent
           title="First name"
           keyboardType={"default"}
-          onChangeText={(value) => handleChange(value, "firstName")}
+          onChangeText={(value) =>
+            handleChange(value, "firstName", setFirtstNameFilled, true)
+          }
           isFilled={FisrtNameFilled}
         />
         <TextInputComponent
           title="Email *"
           keyboardType={"email-address"}
-          onChangeText={(value) => handleChange(value, "email")}
+          onChangeText={(value) =>
+            handleChange(value, "email", setEmailFilled, true)
+          }
           isFilled={EmailFilled}
         />
         <TextInputComponent
@@ -49,7 +50,9 @@ const SignUpScreen = ({ navigation }) => {
           help={
             "Use 8 or more characters with a mix of letters, numbers, and symbols."
           }
-          onChangeText={(value) => handleChange(value, "password")}
+          onChangeText={(value) =>
+            handleChange(value, "password", setPasswordFilled, true)
+          }
           isFilled={passwordFilled}
         />
 
