@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     height: 45,
     paddingLeft: 12,
     fontSize: 18,
+    borderWidth: 1,
   },
   hint: {
     color: "grey",

@@ -8,10 +8,9 @@ import { styles } from "./styles";
 import { Text, View, SafeAreaView } from "react-native";
 
 const SignUpScreen = ({ navigation }) => {
-  const [FisrtNameFilled, setFirtstNameFilled] = useState(false);
-  const [EmailFilled, setEmailFilled] = useState(false);
-  const [passwordFilled, setPasswordFilled] = useState(false);
-  //const [borderColor, setBorderColor] = useState(false);
+  const [FisrtNameBorderColor, setFirtstNameBorderColor] = useState("grey");
+  const [EmailBorderColor, setEmailBorderColor] = useState("grey");
+  const [passwordBorderColor, setPasswordBorderColor] = useState("grey");
 
   const [input, setInput] = useState({
     firstName: "",
@@ -22,7 +21,7 @@ const SignUpScreen = ({ navigation }) => {
   const handleChange = (value, name, setBorder, borderState) => {
     setInput((state) => ({ ...state, [name]: value }));
     setBorder(borderState);
-    if (value == "") setBorder(false);
+    if (value == "") setBorder("grey");
   };
 
   return (
@@ -32,17 +31,18 @@ const SignUpScreen = ({ navigation }) => {
           title="First name"
           keyboardType={"default"}
           onChangeText={(value) =>
-            handleChange(value, "firstName", setFirtstNameFilled, true)
+            handleChange(value, "firstName", setFirtstNameBorderColor, "#6270de"
+            )
           }
-          isFilled={FisrtNameFilled}
+          brderColor={FisrtNameBorderColor}
         />
         <TextInputComponent
           title="Email *"
           keyboardType={"email-address"}
           onChangeText={(value) =>
-            handleChange(value, "email", setEmailFilled, true)
+            handleChange(value, "email", setEmailBorderColor, "#6270de")
           }
-          isFilled={EmailFilled}
+          brderColor={EmailBorderColor}
         />
         <TextInputComponent
           enablePassword={true}
@@ -51,9 +51,9 @@ const SignUpScreen = ({ navigation }) => {
             "Use 8 or more characters with a mix of letters, numbers, and symbols."
           }
           onChangeText={(value) =>
-            handleChange(value, "password", setPasswordFilled, true)
+            handleChange(value, "password", setPasswordBorderColor, "#6270de")
           }
-          isFilled={passwordFilled}
+          brderColor={passwordBorderColor}
         />
 
         <CheckBoxComponent text="I agree to the Terms and Privacy Policy" />
