@@ -11,7 +11,7 @@ const TextInputComponent = ({
   icon,
   value,
   onChangeText,
-  brderColor
+  brderColor,
 }) => {
   const [password, setPassword] = useState(enablePassword);
   const [iconPwd, setIcon] = useState("eye-outline");
@@ -21,19 +21,14 @@ const TextInputComponent = ({
     password ? setIcon("eye-off-outline") : setIcon("eye-outline");
   };
   return (
-    <View style={styles.container}>
-      <View style={styles.titleSection}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.titleWarning}>*{title}</Text>
+    <View style={styles().container}>
+      <View style={styles().titleSection}>
+        <Text style={styles().title}>{title}</Text>
+        <Text style={styles().titleWarning}>*{title}</Text>
       </View>
       <View>
         <TextInput
-          style={[
-            styles.input,
-            {
-              borderColor: brderColor,
-            },
-          ]}
+          style={styles(brderColor).input}
           secureTextEntry={password}
           keyboardType={keyboardType}
           value={value}
@@ -44,15 +39,15 @@ const TextInputComponent = ({
             name={iconPwd}
             size={24}
             color={brderColor}
-            style={styles.icon}
+            style={styles().icon}
             onPress={showPassword}
           />
         )}
         {icon && (
-          <Ionicons name={icon} size={24} color="grey" style={styles.icon} />
+          <Ionicons name={icon} size={24} color="grey" style={styles().icon} />
         )}
       </View>
-      <Text style={styles.hint}>{help}</Text>
+      <Text style={styles().hint}>{help}</Text>
     </View>
   );
 };
