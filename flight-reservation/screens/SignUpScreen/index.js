@@ -25,7 +25,7 @@ const SignUpScreen = ({ navigation }) => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user.email);
-        navigation.navigate("MyFlightsScreen", user);
+        navigation.navigate("MyFlightsScreen", {user});
       })
       .catch((error) => alert(error.message));
   };
