@@ -12,6 +12,9 @@ const SignUpScreen = ({ navigation }) => {
   const [EmailBorderColor, setEmailBorderColor] = useState("grey");
   const [passwordBorderColor, setPasswordBorderColor] = useState("grey");
 
+  const [agree, setAgree] = useState(false);
+  const [subs, setSubs] = useState(false)
+
   const [input, setInput] = useState({
     firstName: "",
     email: "",
@@ -56,8 +59,8 @@ const SignUpScreen = ({ navigation }) => {
           brderColor={passwordBorderColor}
         />
 
-        <CheckBoxComponent text="I agree to the Terms and Privacy Policy" />
-        <CheckBoxComponent text="Subscribe for select product updates." />
+        <CheckBoxComponent text="I agree to the Terms and Privacy Policy" state={agree} setState={setAgree}/>
+        <CheckBoxComponent text="Subscribe for select product updates." state={subs} setState={setSubs}/>
 
         <ButtonComponent
           title="Sign Up"

@@ -7,8 +7,6 @@ export const styles = StyleSheet.create({
     innerIconStyle: {
       borderWidth: 2,
     },
-    fillColor: 'gray'
-    ,
     size: 25
     ,
     checkedFillColor: 'blue',
