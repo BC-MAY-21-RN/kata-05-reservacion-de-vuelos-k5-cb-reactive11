@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "634710085174",
+    "project_id": "fir-auth-410d1",
+    "storage_bucket": "fir-auth-410d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634710085174:android:ce9a704dfa75fbb8a1d297",
+        "android_client_info": {
+          "package_name": "com.flightreservationcli"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634710085174-cve0korshs3te68k8tjp947dodf959va.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrTtMThtzKzM5P2J5VANvWxHbyaP10zGM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634710085174-cve0korshs3te68k8tjp947dodf959va.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
