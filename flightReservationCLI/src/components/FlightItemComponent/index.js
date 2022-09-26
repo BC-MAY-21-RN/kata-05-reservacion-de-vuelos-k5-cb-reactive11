@@ -1,6 +1,6 @@
-import { View, Text } from "react-native";
-import styles from "./style";
-import React from "react";
+import { View, Text } from 'react-native';
+import styles from './style';
+import React from 'react';
 
 const FlightItem = ({
   date,
@@ -24,7 +24,7 @@ const FlightItem = ({
         </View>
       </View>
       <View style={styles.date}>
-        <Text style={styles.dateText}>{date}</Text> 
+        <Text style={styles.dateText}>{date}</Text>
         {passengers && (
           <Text style={styles.dateText}>{passengers} Passengers</Text>
         )}
