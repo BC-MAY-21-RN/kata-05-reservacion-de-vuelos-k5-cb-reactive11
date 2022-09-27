@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { styles } from './styles';
 import { Text, View, SafeAreaView } from 'react-native';
 import { useGoogle } from '../../hooks/useGoogle';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 const SignUpScreen = ({ navigation }) => {
   const [FisrtNameBorderColor, setFirtstNameBorderColor] = useState('grey');
@@ -41,7 +42,7 @@ const SignUpScreen = ({ navigation }) => {
               '#6270de',
             )
           }
-          brderColor={FisrtNameBorderColor}
+          bdColor={FisrtNameBorderColor}
         />
         <TextInputComponent
           title="Email *"
@@ -49,7 +50,7 @@ const SignUpScreen = ({ navigation }) => {
           onChangeText={value =>
             handleChange(value, 'email', setEmailBorderColor, '#6270de')
           }
-          brderColor={EmailBorderColor}
+          bdColor={EmailBorderColor}
         />
         <TextInputComponent
           enablePassword={true}
@@ -60,7 +61,7 @@ const SignUpScreen = ({ navigation }) => {
           onChangeText={value =>
             handleChange(value, 'password', setPasswordBorderColor, '#6270de')
           }
-          brderColor={passwordBorderColor}
+          bdColor={passwordBorderColor}
         />
         <CheckBoxComponent text="I agree to the Terms and Privacy Policy" />
         <CheckBoxComponent text="Subscribe for select product updates." />
@@ -80,7 +81,7 @@ const SignUpScreen = ({ navigation }) => {
           title="Sign Up with Google"
           textColor="#fff"
           bgColor="gray"
-          icon="google"
+          icon={faGoogle}
           onPress={() => onGoogleButtonPress()}
         />
 
