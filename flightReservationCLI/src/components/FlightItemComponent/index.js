@@ -1,6 +1,8 @@
 import { View, Text } from 'react-native';
 import styles from './style';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faPlane } from '@fortawesome/free-solid-svg-icons';
 
 const FlightItem = ({
   date,
@@ -17,7 +19,8 @@ const FlightItem = ({
           <Text style={styles.destinationText}>{originShort}</Text>
           <Text style={styles.subText}>{originLong}</Text>
         </View>
-        {/* <Ionicons name="airplane" size={24} color="#6170F7" /> */}
+        <FontAwesomeIcon icon={faPlane} size={20} color="#6170F7" />
+
         <View style={styles.rightColumn}>
           <Text style={styles.destinationText}>{destShort}</Text>
           <Text style={styles.subText}>{destLong}</Text>

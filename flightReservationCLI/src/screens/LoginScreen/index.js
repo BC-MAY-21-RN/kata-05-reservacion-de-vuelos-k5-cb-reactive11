@@ -3,16 +3,22 @@ import React, { useState } from 'react';
 import { ButtonComponent, TextInputComponent } from '../../components';
 import { styles } from './styles';
 import { useGoogle } from '../../hooks/useGoogle';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 const LoginScreen = ({ navigation }) => {
+  const [EmailBorderColor, setEmailBorderColor] = useState('grey');
+  const [passwordBorderColor, setPasswordBorderColor] = useState('grey');
+
   const [onGoogleButtonPress, signOut] = useGoogle(navigation);
   const [input, setInput] = useState({
     email: '',
     password: '',
   });
 
-  const handleChange = (value, name) => {
+  const handleChange = (value, name, setBorder, borderState) => {
     setInput(state => ({ ...state, [name]: value }));
+    setBorder(borderState);
+    if (value == '') setBorder('grey');
   };
 
   return (
@@ -21,12 +27,21 @@ const LoginScreen = ({ navigation }) => {
         <TextInputComponent
           title="Email *"
           keyboardType={'email-address'}
-          onChangeText={value => handleChange(value, 'email')}
+          onChangeText={value =>
+            handleChange(value, 'email', setEmailBorderColor, '#6270de')
+          }
+          bdColor={EmailBorderColor}
         />
         <TextInputComponent
-          title="Password *"
           enablePassword={true}
-          onChangeText={value => handleChange(value, 'password')}
+          title="Password *"
+          help={
+            'Use 8 or more characters with a mix of letters, numbers, and symbols.'
+          }
+          onChangeText={value =>
+            handleChange(value, 'password', setPasswordBorderColor, '#6270de')
+          }
+          bdColor={passwordBorderColor}
         />
         <ButtonComponent
           title="Log in"
@@ -38,13 +53,13 @@ const LoginScreen = ({ navigation }) => {
           }}
         />
         <View style={styles.orSection}>
-          <Text style={styles.orText}>or</Text>
+          <Text style={styles.orText} style={styles.orText}>or</Text>
         </View>
         <ButtonComponent
           title="Sign Up with Google"
           textColor="#fff"
           bgColor="gray"
-          icon="google"
+          icon={faGoogle}
           onPress={() => onGoogleButtonPress()}
         />
 

@@ -1,6 +1,8 @@
-import React, { useState } from "react";
-import { styles } from "./styles";
-import { Text, TextInput, View } from "react-native";
+import React, { useState } from 'react';
+import { styles } from './styles';
+import { Text, TextInput, View, TouchableOpacity } from 'react-native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const TextInputComponent = ({
   title,
@@ -10,14 +12,14 @@ const TextInputComponent = ({
   icon,
   value,
   onChangeText,
-  brderColor,
+  bdColor,
 }) => {
   const [password, setPassword] = useState(enablePassword);
-  const [iconPwd, setIcon] = useState("eye-outline");
+  const [iconPwd, setIcon] = useState(faEyeSlash);
 
   const showPassword = () => {
     setPassword(!password);
-    password ? setIcon("eye-off-outline") : setIcon("eye-outline");
+    password ? setIcon(faEye) : setIcon(faEyeSlash);
   };
   return (
     <View style={styles().container}>
@@ -27,21 +29,17 @@ const TextInputComponent = ({
       </View>
       <View>
         <TextInput
-          style={styles(brderColor).input}
+          style={styles(bdColor).input}
           secureTextEntry={password}
           keyboardType={keyboardType}
           value={value}
           onChangeText={onChangeText}
         />
-        {/* {enablePassword && (
-          <Ionicons
-            name={iconPwd}
-            size={24}
-            color={brderColor}
-            style={styles().icon}
-            onPress={showPassword}
-          />
-        )} */}
+        {enablePassword && (
+          <TouchableOpacity style={styles().icon} onPress={showPassword}>
+            <FontAwesomeIcon icon={iconPwd} size={24} color={bdColor} />
+          </TouchableOpacity>
+        )}
         {/* {icon && (
           <Ionicons name={icon} size={24} color="grey" style={styles().icon} />
         )} */}
