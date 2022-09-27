@@ -1,8 +1,8 @@
-import { SignUpScreen, LoginScreen, MyFlightsScreen } from "./src/screens";
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { TitleComponent } from "./src/components";
+import { SignUpScreen, LoginScreen, MyFlightsScreen } from './src/screens';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { TitleComponent } from './src/components';
 
 const Stack = createNativeStackNavigator();
 

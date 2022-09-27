@@ -1,41 +1,43 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   mainContainer: {
-    borderColor: "#000",
+    borderColor: '#000',
     borderBottomWidth: 1,
     paddingBottom: 20,
     marginVertical: 5,
   },
   destination: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     paddingBottom: 10,
     marginBottom: 10,
     borderBottomWidth: 0.55,
-    borderColor: "#808080",
+    borderColor: '#808080',
   },
   rightColumn: {
-    alignItems: "flex-end",
+    alignItems: 'flex-end',
   },
   date: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   destinationText: {
     fontSize: 22,
-    fontWeight: "900",
+    fontWeight: '900',
+    color: 'black',
   },
   dateText: {
     fontSize: 15,
-    fontWeight: "600",
+    fontWeight: '600',
+    color: 'black',
   },
   subText: {
     fontSize: 14,
-    fontWeight: "300",
-    color: "gray",
+    fontWeight: '300',
+    color: 'gray',
   },
 });
 
