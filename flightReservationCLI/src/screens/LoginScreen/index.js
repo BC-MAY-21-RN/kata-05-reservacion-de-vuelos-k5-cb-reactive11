@@ -53,7 +53,7 @@ const LoginScreen = ({ navigation }) => {
           }}
         />
         <View style={styles.orSection}>
-          <Text style={styles.orText}>or</Text>
+          <Text style={styles.orText} style={styles.orText}>or</Text>
         </View>
         <ButtonComponent
           title="Sign Up with Google"
