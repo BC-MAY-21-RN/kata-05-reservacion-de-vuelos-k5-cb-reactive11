@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 const MyFlightsScreen = ({ route, navigation }) => {
   const credentials = route.params;
-
   return (
     <SafeAreaView style={styles.globalContainer}>
       <View style={styles.mainContainer}>

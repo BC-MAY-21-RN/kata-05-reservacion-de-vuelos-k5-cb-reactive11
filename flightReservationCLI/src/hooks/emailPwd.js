@@ -7,7 +7,7 @@ export const signInHandler = navigation => {
     console.log(email, password);
     auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(user => navigation.navigate('MyFlightsScreen'))
+      .then(user => navigation.navigate('MyFlightsScreen', {user: user}))
       .catch(error => Alert.alert(error));
   };
 
@@ -15,7 +15,7 @@ export const signInHandler = navigation => {
     console.log(email, password);
     auth()
       .signInWithEmailAndPassword(email, password)
-      .then(user => navigation.navigate('MyFlightsScreen'))
+      .then(user => navigation.navigate('MyFlightsScreen', {user: user}))
       .catch(error => Alert.alert(error));
   };
 
