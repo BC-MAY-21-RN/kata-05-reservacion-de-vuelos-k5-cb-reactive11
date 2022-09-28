@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { styles } from './styles';
 import { Text, View, SafeAreaView } from 'react-native';
 import { useGoogle } from '../../hooks/useGoogle';
+import { signInHandler } from '../../hooks/emailPwd';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 const SignUpScreen = ({ navigation }) => {
@@ -14,7 +15,8 @@ const SignUpScreen = ({ navigation }) => {
   const [EmailBorderColor, setEmailBorderColor] = useState('grey');
   const [passwordBorderColor, setPasswordBorderColor] = useState('grey');
 
-  const [onGoogleButtonPress, signOut] = useGoogle();
+  const [onGoogleButtonPress, signOut] = useGoogle(navigation);
+  const [emailSingin] = signInHandler(navigation);
 
   const [input, setInput] = useState({
     firstName: '',
@@ -69,14 +71,11 @@ const SignUpScreen = ({ navigation }) => {
           title="Sign Up"
           textColor="#fff"
           bgColor="gray"
-          onPress={() =>
-            navigation.navigate('MyFlightsScreen', { credentials: input })
-          }
+          onPress={() => emailSingin(input.email, input.password)}
         />
         <View style={styles.orSection}>
-          <Text style={styles.orText} style={styles.orText}>or</Text>
+          <Text style={styles.orText}>or</Text>
         </View>
-
 
         <ButtonComponent
           title="Sign Up with Google"
@@ -86,7 +85,6 @@ const SignUpScreen = ({ navigation }) => {
           onPress={() => onGoogleButtonPress()}
         />
 
-        {/* <GoogleSignInComponent />*/}
         <ButtonComponent
           title="log out"
           textColor="#fff"
