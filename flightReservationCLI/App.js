@@ -3,20 +3,33 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { TitleComponent } from './src/components';
+import { userHandler } from './src/hooks/useUser';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
+  const currentUser = userHandler();
+  console.warn(currentUser);
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SignUpScreen">
-        <Stack.Screen
+        { !currentUser? <Stack.Screen
           name="SignUpScreen"
           component={SignUpScreen}
           options={{
             headerTitle: () => <TitleComponent title="Sign Up" />,
           }}
-        />
+        /> :  <Stack.Screen
+        name="MyFlightsScreen"
+        component={MyFlightsScreen}
+        options={{
+          headerTitle: () => <TitleComponent title="My flights" />,
+          headerBackVisible: false,
+        }}
+      />}
+        
         <Stack.Screen
           name="LoginScreen"
           component={LoginScreen}
@@ -25,14 +38,7 @@ export default function App() {
             headerBackVisible: false,
           }}
         />
-        <Stack.Screen
-          name="MyFlightsScreen"
-          component={MyFlightsScreen}
-          options={{
-            headerTitle: () => <TitleComponent title="My flights" />,
-            headerBackVisible: false,
-          }}
-        />
+       
       </Stack.Navigator>
     </NavigationContainer>
   );

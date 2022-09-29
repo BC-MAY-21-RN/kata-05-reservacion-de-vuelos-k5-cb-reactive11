@@ -3,7 +3,7 @@ import auth from '@react-native-firebase/auth';
 
 export const userHandler = () => {
   const [initializing, setInitializing] = useState(true);
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
 
   const onAuthStateChanged = async user => {
     await setUser(user);
