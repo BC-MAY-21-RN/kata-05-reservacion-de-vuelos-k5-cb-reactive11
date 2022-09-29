@@ -1,5 +1,5 @@
-import { View, SafeAreaView, TouchableOpacity } from 'react-native';
-import { FlightList, ButtonComponent } from '../../components';
+import { View, SafeAreaView, TouchableOpacity, Button } from 'react-native';
+import { FlightList } from '../../components';
 import React from 'react';
 import styles from './styles';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
@@ -12,11 +12,11 @@ const MyFlightsScreen = ({ route, navigation }) => {
   return (
     <SafeAreaView style={styles.globalContainer}>
       <View style={styles.mainContainer}>
-        <ButtonComponent
+        <Button
           title="sign out mijo"
-          textColor='red'
           onPress={() => {
             auth().signOut();
+            GoogleSignin.signOut();
           }}
         />
         <FlightList />
