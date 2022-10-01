@@ -9,10 +9,10 @@ const TextInputComponent = ({
   enablePassword,
   help,
   keyboardType,
-  icon,
   value,
   onChangeText,
   bdColor,
+  error,
 }) => {
   const [password, setPassword] = useState(enablePassword);
   const [iconPwd, setIcon] = useState(faEyeSlash);
@@ -25,7 +25,7 @@ const TextInputComponent = ({
     <View style={styles().container}>
       <View style={styles().titleSection}>
         <Text style={styles().title}>{title}</Text>
-        <Text style={styles().titleWarning}>*{title}</Text>
+        <Text style={styles().titleWarning}>{error}</Text>
       </View>
       <View>
         <TextInput
@@ -34,15 +34,13 @@ const TextInputComponent = ({
           keyboardType={keyboardType}
           value={value}
           onChangeText={onChangeText}
+  
         />
         {enablePassword && (
           <TouchableOpacity style={styles().icon} onPress={showPassword}>
             <FontAwesomeIcon icon={iconPwd} size={24} color={bdColor} />
           </TouchableOpacity>
         )}
-        {/* {icon && (
-          <Ionicons name={icon} size={24} color="grey" style={styles().icon} />
-        )} */}
       </View>
       <Text style={styles().hint}>{help}</Text>
     </View>

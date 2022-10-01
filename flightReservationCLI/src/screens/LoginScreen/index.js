@@ -17,22 +17,44 @@ const LoginScreen = ({ navigation }) => {
     password: '',
   });
 
+  const [errorInput, setErrorInput] = useState();
+  const regexEmail = /\S+@\S+\.\S+/
+
   const handleChange = (value, name, setBorder, borderState) => {
     setInput(state => ({ ...state, [name]: value }));
     setBorder(borderState);
     if (value == '') setBorder('grey');
   };
 
+  const isValidEmail=(email)=>{
+    if(email){
+      !regexEmail.test(email) ?
+       setErrorInput('   *Invalid Email*')
+       : 
+       setErrorInput(null)
+    }else{
+      setErrorInput(null)
+    }
+    
+    return regexEmail.test(email) 
+  }
+
+
   return (
     <SafeAreaView style={styles.globalContainer}>
       <View style={styles.container}>
+     
         <TextInputComponent
-          title="Email *"
+          title="Email"
           keyboardType={'email-address'}
-          onChangeText={value =>
+          onChangeText={value => {
             handleChange(value, 'email', setEmailBorderColor, '#6270de')
+            isValidEmail(value)
+            }
           }
           bdColor={EmailBorderColor}
+          error={errorInput}
+          
         />
         <TextInputComponent
           enablePassword={true}
@@ -47,8 +69,9 @@ const LoginScreen = ({ navigation }) => {
         />
         <ButtonComponent
           title="Log in"
-          bgColor="gray"
+          bgColor={(errorInput) ? 'grey' : 'blue'}
           onPress={() => emailLogin(input.email, input.password)}
+          disabled={(errorInput) ? 'true' : 'false'}
         />
         <View style={styles.orSection}>
           <Text style={styles.orText}>or</Text>
@@ -61,12 +84,6 @@ const LoginScreen = ({ navigation }) => {
           onPress={() => onGoogleButtonPress()}
         />
 
-        <ButtonComponent
-          title="log out"
-          textColor="#fff"
-          bgColor="gray"
-          onPress={signOut}
-        />
         <View style={styles.singUpAlternative}>
           <Text style={styles.singUpAlternativeText}>
             Don't have an account?

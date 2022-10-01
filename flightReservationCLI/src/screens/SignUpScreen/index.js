@@ -84,13 +84,6 @@ const SignUpScreen = ({ navigation }) => {
           icon={faGoogle}
           onPress={() => onGoogleButtonPress()}
         />
-
-        <ButtonComponent
-          title="log out"
-          textColor="#fff"
-          bgColor="gray"
-          onPress={signOut}
-        />
         <View style={styles.loginSection}>
           <Text style={styles.textColor}>Already have an account?</Text>
           <Text
