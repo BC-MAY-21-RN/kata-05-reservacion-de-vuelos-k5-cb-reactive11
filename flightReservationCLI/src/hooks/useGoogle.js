@@ -1,5 +1,3 @@
-// import ButtonComponent from '../ButtonComponent';
-import React, { useEffect, useState } from 'react';
 import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
@@ -15,15 +13,13 @@ export const useGoogle = navigation => {
     const googleCredential = auth.GoogleAuthProvider.credential(idToken);
 
     // Sign-in the user with the credential
-    return auth()
-      .signInWithCredential(googleCredential)
-      .then(navigation.navigate('MyFlightsScreen'));
+    return auth().signInWithCredential(googleCredential);
   };
 
   const signOut = async () => {
     try {
       await GoogleSignin.signOut();
-      this.setState({ user: null }); // Remember to remove the user from your app's state as well
+      auth().signOut();
     } catch (error) {
       console.error(error);
     }

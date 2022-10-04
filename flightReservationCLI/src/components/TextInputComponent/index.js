@@ -9,13 +9,18 @@ const TextInputComponent = ({
   enablePassword,
   help,
   keyboardType,
-  icon,
-  value,
-  onChangeText,
   bdColor,
+  error,
+  validationInput,
+  validationError,
+  ...rest
 }) => {
+  const [isFocused, setIsFocused] = useState(false);
+
   const [password, setPassword] = useState(enablePassword);
   const [iconPwd, setIcon] = useState(faEyeSlash);
+  
+  const [problem, setProblem] = useState('');
 
   const showPassword = () => {
     setPassword(!password);
@@ -25,24 +30,30 @@ const TextInputComponent = ({
     <View style={styles().container}>
       <View style={styles().titleSection}>
         <Text style={styles().title}>{title}</Text>
-        <Text style={styles().titleWarning}>*{title}</Text>
+        <Text style={styles().titleWarning}>{(validationInput) ? '' : problem}</Text>
       </View>
       <View>
         <TextInput
-          style={styles(bdColor).input}
+          style={isFocused ? styles('#6170F7').input : styles('grey').input}
           secureTextEntry={password}
           keyboardType={keyboardType}
-          value={value}
-          onChangeText={onChangeText}
+          onFocus={() => setIsFocused(true)}
+          onEndEditing={() => {
+            (validationInput) ? setProblem(''): setProblem(validationError)
+            setIsFocused(false)
+            
+          }}
+          {...rest}
         />
         {enablePassword && (
           <TouchableOpacity style={styles().icon} onPress={showPassword}>
-            <FontAwesomeIcon icon={iconPwd} size={24} color={bdColor} />
+            <FontAwesomeIcon
+              icon={iconPwd}
+              size={24}
+              color={isFocused ? '#6170F7' : 'grey'}
+            />
           </TouchableOpacity>
         )}
-        {/* {icon && (
-          <Ionicons name={icon} size={24} color="grey" style={styles().icon} />
-        )} */}
       </View>
       <Text style={styles().hint}>{help}</Text>
     </View>

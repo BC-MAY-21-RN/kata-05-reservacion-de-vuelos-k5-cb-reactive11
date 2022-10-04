@@ -23,6 +23,7 @@ export const styles = bdColor =>
       fontSize: 18,
       borderWidth: 1,
       borderColor: bdColor,
+      color: 'black',
     },
     hint: {
       color: 'grey',

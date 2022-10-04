@@ -3,73 +3,57 @@ import React, { useState } from 'react';
 import { ButtonComponent, TextInputComponent } from '../../components';
 import { styles } from './styles';
 import { useGoogle } from '../../hooks/useGoogle';
+import { signInHandler } from '../../hooks/emailPwd';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import useForm from '../../hooks/useForm';
 
 const LoginScreen = ({ navigation }) => {
-  const [EmailBorderColor, setEmailBorderColor] = useState('grey');
-  const [passwordBorderColor, setPasswordBorderColor] = useState('grey');
+  const [emaill,
+    passwordd,
+    name,
+    subscribe,
+    terms,
+    validEmaill,
+    validLogin] = useForm(); /*??????*/
 
   const [onGoogleButtonPress, signOut] = useGoogle(navigation);
-  const [input, setInput] = useState({
-    email: '',
-    password: '',
-  });
-
-  const handleChange = (value, name, setBorder, borderState) => {
-    setInput(state => ({ ...state, [name]: value }));
-    setBorder(borderState);
-    if (value == '') setBorder('grey');
-  };
+  const [emailSignIn, emailLogin] = signInHandler(navigation);
 
   return (
     <SafeAreaView style={styles.globalContainer}>
       <View style={styles.container}>
+
         <TextInputComponent
-          title="Email *"
+          {...emaill}
+          title="Email"
           keyboardType={'email-address'}
-          onChangeText={value =>
-            handleChange(value, 'email', setEmailBorderColor, '#6270de')
-          }
-          bdColor={EmailBorderColor}
+          validationInput={validEmaill}
+          validationError={(validEmaill) ? null : '*Invalid Email*'}
         />
+
         <TextInputComponent
+          {...passwordd}
           enablePassword={true}
           title="Password *"
-          help={
-            'Use 8 or more characters with a mix of letters, numbers, and symbols.'
-          }
-          onChangeText={value =>
-            handleChange(value, 'password', setPasswordBorderColor, '#6270de')
-          }
-          bdColor={passwordBorderColor}
         />
+
         <ButtonComponent
           title="Log in"
-          bgColor="gray"
-          onPress={() => {
-            navigation.navigate('MyFlightsScreen', {
-              credentials: input,
-            });
-          }}
+          bgColor={validLogin ? '#6170F7' : 'grey'}
+          onPress={() => emailLogin(emaill.value, passwordd.value)}
+          disabled={(validLogin) ? false : true}
         />
         <View style={styles.orSection}>
-          <Text style={styles.orText} style={styles.orText}>or</Text>
+          <Text style={styles.orText}>or</Text>
         </View>
         <ButtonComponent
-          title="Sign Up with Google"
+          title="Log in with Google"
           textColor="#fff"
-          bgColor="gray"
+          bgColor='#6170F7'
           icon={faGoogle}
           onPress={() => onGoogleButtonPress()}
         />
 
-        {/* <GoogleSignInComponent />*/}
-        <ButtonComponent
-          title="log out"
-          textColor="#fff"
-          bgColor="gray"
-          onPress={signOut}
-        />
         <View style={styles.singUpAlternative}>
           <Text style={styles.singUpAlternativeText}>
             Don't have an account?
