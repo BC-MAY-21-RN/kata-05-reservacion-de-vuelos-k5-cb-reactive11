@@ -35,9 +35,6 @@ const LoginScreen = ({ navigation }) => {
           {...passwordd}
           enablePassword={true}
           title="Password *"
-          help={
-            'Use 8 or more characters with a mix of letters, numbers, and symbols.'
-          }
         />
 
         <ButtonComponent
