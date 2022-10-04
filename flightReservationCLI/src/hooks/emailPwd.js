@@ -3,18 +3,17 @@ import { Alert } from 'react-native';
 
 export const signInHandler = navigation => {
   const emailSignIn = (email, password) => {
-    console.log('asdasd');
-    console.log(email, password);
     auth()
       .createUserWithEmailAndPassword(email, password)
-      .catch(error => Alert.alert(error));
+      .catch(error => alert('Error', 'Something went wrong'));
   };
 
   const emailLogin = (email, password) => {
-    console.log(email, password);
     auth()
       .signInWithEmailAndPassword(email, password)
-      .catch(error => Alert.alert(error));
+      .catch(error =>
+        alert('Error with email and/or password', 'Something went wrong'),
+      );
   };
 
   return [emailSignIn, emailLogin];

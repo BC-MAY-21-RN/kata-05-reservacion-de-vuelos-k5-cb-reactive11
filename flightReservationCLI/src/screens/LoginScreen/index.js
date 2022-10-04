@@ -19,7 +19,6 @@ const LoginScreen = ({ navigation }) => {
   const [onGoogleButtonPress, signOut] = useGoogle(navigation);
   const [emailSignIn, emailLogin] = signInHandler(navigation);
 
-
   return (
     <SafeAreaView style={styles.globalContainer}>
       <View style={styles.container}>
@@ -51,9 +50,9 @@ const LoginScreen = ({ navigation }) => {
           <Text style={styles.orText}>or</Text>
         </View>
         <ButtonComponent
-          title="Sign Up with Google"
+          title="Log in with Google"
           textColor="#fff"
-          bgColor="gray"
+          bgColor='#6170F7'
           icon={faGoogle}
           onPress={() => onGoogleButtonPress()}
         />
